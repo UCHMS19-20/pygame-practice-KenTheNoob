@@ -7,6 +7,10 @@ pygame.init()
 # Create a display. Size must be a tuple, which is why it's in parentheses
 screen = pygame.display.set_mode( (400, 300) )
 
+# font size
+font = pygame.font.SysFont("Times New Roman", 10)
+text = font.render("=^.^=", True, (100, 200, 255) )
+
 red = pygame.Color(255, 0, 0)
 orange = pygame.Color(255, 128, 0)
 yellow = pygame.Color(255, 255, 0)
@@ -30,4 +34,5 @@ while True:
             if color_index >= len(colors):
                 color_index = 0
     screen.fill(colors[color_index])
+    screen.blit(text, pygame.mouse.get_pos() )
     pygame.display.flip()
